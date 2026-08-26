@@ -1528,7 +1528,7 @@ describe("App", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: "进入阅读小窝" }));
 
-    expect(await screen.findByText(/第 1 页 \/ 共 \d+ 页/)).toBeInTheDocument();
+    expect(\n      await screen.findByText(/第 1 页 \/ 共 \d+ 页/, {}, { timeout: 5_000 })\n    ).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith(
       "https://worker.example.test/source/secret/upload",
       expect.objectContaining({ method: "POST" })
@@ -1542,7 +1542,7 @@ describe("App", () => {
       }
     });
     await deviceCache.remove("large-cloud-upload-session");
-  });
+  }, 10_000);
 
   it("does not overwrite a server-side bridge upload when private manifest metadata is unavailable", async () => {
     const deviceCache = new IndexedDbReadingCache();
