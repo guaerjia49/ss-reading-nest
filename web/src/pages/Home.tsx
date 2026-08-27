@@ -130,7 +130,7 @@ export function Home(props: {
   return (
     <main className="library-app-shell">
       <aside className="library-rail" aria-label="小书房导航">
-        <strong>冰冰和星星的小书房</strong>
+        <strong>小伊和月亮的共读小窝</strong>
         <nav>
           {LIBRARY_NAV.map((item) => {
             const Icon = item.icon;
@@ -153,8 +153,8 @@ export function Home(props: {
       <section className="home-shell">
         <header className="library-header">
           <div>
-            <span className="visually-hidden">冰冰和星星的小书房</span>
-            <span className="library-kicker">冰冰和星星的小书房</span>
+            <span className="visually-hidden">小伊和月亮的共读小窝</span>
+            <span className="library-kicker">小伊和月亮的共读小窝</span>
             <h1>{headerCopy.title}</h1>
             <p>{headerCopy.subtitle}</p>
           </div>
